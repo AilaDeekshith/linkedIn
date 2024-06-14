@@ -7,15 +7,11 @@ import '../index.css'
 
 const Layout = () => {
   return (
-    <div className='layout'>
-      <Grid container>
-        <Grid item xs={1.5}></Grid>
-        <Grid item xs={1.75}><Self/></Grid>
-        <Grid item xs={.25}></Grid>
-        <Grid item xs={4.5}><Posts/></Grid>
-        <Grid item xs={.25}></Grid>
-        <Grid item xs={2.5}><News/></Grid>
-        <Grid item xs={1}></Grid>
+    <div style={{marginTop:'50px'}}>
+      <Grid container sx={{display:'flex',justifyContent:'center',gap:'15px'}}>
+        <Grid item><Self/></Grid>
+        <Grid item lg={4.5}><Posts/></Grid>
+        <Grid item><News/></Grid>
       </Grid>
     </div>
   )

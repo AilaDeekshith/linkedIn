@@ -1,53 +1,38 @@
-import React from 'react'
-import './news.css'
-const News = () => {
-  return (
-    <div>
-      <div className='news'>
-        <div className='newsHeader'>
-          <h3>LinkedIn News</h3>
-          <h6>Top stories</h6>
-        </div>
-        <div className='newsItems'>
-          <div className='newsItem'>
-            <h1>Elections 2024: NDA retains majority</h1>
-            <div>
-              <p>Top news</p>
-              <p>34,895 readers</p>
-            </div>
-          </div>
-          <div className='newsItem'>
-            <h1>Freshers in demand at these firms</h1>
-            <div>
-              <p>2d ago</p>
-              <p>6,633 readers</p>
-            </div>
-          </div>
-          <div className='newsItem'>
-            <h1>Startup investors shift strategy</h1>
-            <div>
-              <p>2d ago</p>
-              <p>2,895 readers</p>
-            </div>
-          </div>
-          <div className='newsItem'>
-            <h1>Banks battle rising fraud</h1>
-            <div>
-              <p>3d ago</p>
-              <p>2,605 readers</p>
-            </div>
-          </div>
-          <div className='newsItem'>
-            <h1>Consulting firms eye retail</h1>
-            <div>
-              <p>4d ago</p>
-              <p>4,896 readers</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { Grid } from '@mui/material';
 
-export default News
+
+export default function News() {
+  return (
+    <Grid container>
+      <Grid item>
+      <Card variant='outlined'>
+      <CardContent>
+        <Typography sx={{fontWeight:'bold'}} variant='h6'>LinkedIn News</Typography>
+        <Typography marginTop='10px' color='rgb(0,0,0,0.7)' fontWeight='bold' variant='body1'>Top stories</Typography>
+      </CardContent>
+      <CardContent>
+        <Typography sx={{fontWeight:'bold'}} variant='body2'>Elections 2024 : NDA takes charge</Typography>
+        <Typography sx={{color:'rgb(0,0,0,0.5)'}} variant='caption'>Top News 34,234 readers</Typography>
+        <Typography sx={{fontWeight:'bold'}} variant='body2'>Freshers in demand at this firms</Typography>
+        <Typography sx={{color:'rgb(0,0,0,0.5)'}} variant='caption'>1d ago 56,234 readers</Typography>
+        <Typography sx={{fontWeight:'bold'}} variant='body2'>Startup investors shift strategy</Typography>
+        <Typography sx={{color:'rgb(0,0,0,0.5)'}} variant='caption'>1d ago 67242 readers</Typography>
+        <Typography sx={{fontWeight:'bold'}} variant='body1'>Banks battle rising fund</Typography>
+        <Typography sx={{color:'rgb(0,0,0,0.5)'}} variant='caption'>1d ago 78,342 readers</Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Show More</Button>
+      </CardActions>
+      </Card>
+      </Grid>
+    </Grid>
+      
+  );
+}

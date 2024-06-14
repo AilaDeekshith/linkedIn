@@ -15,7 +15,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import img1 from './images/loginImage.svg';
 import GoogleIcon from '@mui/icons-material/Google';
-import './login.css'
+
 
 export const Login = ({auth}) => {
     const [tabValue,setTabValue] = useState(0);
@@ -45,12 +45,12 @@ export const Login = ({auth}) => {
   return (
     <>
     <CssBaseline/>
-            <Grid container>
-                <Grid xs={5} item sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+            <Grid container sx={{display:'flex',alignItems:'center',justifyContent:'space-around'}}>
+                <Grid item sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
                     <Typography color='primary' fontSize={30}>LinkedIn</Typography>
                     <LinkedInIcon color='primary' sx={{fontSize:'30px'}}/>
                 </Grid>
-                <Grid xs={4} item sx={{display:'flex'}}>
+                <Grid item sx={{display:'flex',alignItems:'center',gap:'20px'}}>
                 <Tabs indicatorColor='white' value={tabValue} onChange={(e,value)=>setTabValue(value)}>
                     <Tab sx={{textTransform:'none'}} icon={<ArticleIcon/>} label="Articles"/>
                     <Tab sx={{textTransform:'none'}} icon={<PeopleIcon/>} label="People"/>
@@ -61,17 +61,15 @@ export const Login = ({auth}) => {
                     <div style={{marginTop:'10px',borderLeft:'1px solid rgb(0,0,0,0.1)',height:'50px'}}></div>
 
                 </Tabs>
-                </Grid>
-                <Grid xs={3} item sx={{display:'flex',alignItems:'center',gap:'30px'}}>
-                    <Button sx={{textTransform:"none",color:'rgb(0,0,0,0.7)',fontSize:'20px'}} variant="text">Join now</Button>
-                    <Button sx={{padding:'10px',borderRadius:'30px',width:'100px'}} variant="outlined">sign in</Button>
+                <Button sx={{textTransform:"none",color:'rgb(0,0,0,0.7)',fontSize:'20px'}} variant="text">Join now</Button>
+                <Button sx={{textTransform:'none',borderRadius:'10px'}} variant="outlined">Sign in</Button>
                 </Grid>
             </Grid>
-            <Grid container sx={{marginTop:'50px'}}>
-                <Grid xs={1.5}></Grid>
-                <Grid item xs={3.5} alignItems='center'>
+            <Grid container sx={{marginTop:'50px',display:'flex',justifyContent:'space-between'}}>
+                <Grid item></Grid>
+                <Grid item alignItems='center' sx={{maxWidth:'500px'}}>
                     <Typography color='brown' variant='h3'>Welcome to your professional community</Typography>
-                    <div className='loginForm'>
+                    <div style={{marginTop:'30px',display:'flex',flexDirection:'column',gap:'10px'}}>
                         <TextField onChange={handleChange}  value={details.email} type='email' placeholder='Email or Phone' name='email' variant="outlined" fullWidth/>
                         <TextField onChange={handleChange} value={details.password} type='password' placeholder='Password' name='password' variant="outlined" fullWidth InputProps={{
                             endAdornment: (
@@ -94,8 +92,8 @@ export const Login = ({auth}) => {
                     <Button sx={{textTransform:'none',height:'50px',borderRadius:'50px',border:'1px solid rgb(0,0,0,0.5)',color:'rgb(0,0,0,1)'}} variant="outlined" fullWidth>New to LinkedIn? join now</Button>
                     </div>
                 </Grid>
-                <Grid xs={1.5}></Grid>
-                <Grid item xs={5.5}>
+                <Grid item></Grid>
+                <Grid item style={{display:'flex',alignItems:'end'}}>
                     <img className='loginImage' src={img1}></img>
                 </Grid>
             </Grid>

@@ -9,18 +9,44 @@ import SearchIcon from '@mui/icons-material/Search';
 import WorkIcon from '@mui/icons-material/Work';
 import { AppBar, CssBaseline, Grid, InputAdornment, Tab, Tabs, TextField, Toolbar } from '@mui/material';
 import React, { useState } from 'react';
+import AppsIcon from '@mui/icons-material/Apps';
+import { useNavigate } from 'react-router-dom';
 
 export default function Header () {
 
     const [tabValue,setTabValue] = useState(0);
 
+    const navigate = useNavigate()
+
+    function handleTabChange(event,value){
+        setTabValue(value);
+        
+        switch(value){
+            case 0:
+                navigate('home/')
+                break;
+            case 1:
+                navigate('network/')
+                break;
+            case 2:
+                navigate('jobs/')
+                break;
+            case 3:
+                navigate('messages/')
+                break;
+            case 4:
+                navigate('notifications/')
+        
+        }
+    }
+
   return (
     <>
     <CssBaseline/>
-    <AppBar sx={{backgroundColor:'white',boxShadow:'0px 0px 1px 1px rgb(0,0,0,0.1)',height:'55px'}}>
+    <AppBar sx={{backgroundColor:'white',boxShadow:'0px 0px 1px 1px rgb(0,0,0,0.1)'}}>
         <Toolbar>
-            <Grid container>
-                <Grid item xs={4} sx={{display:'flex',alignContent:'center',justifyContent:'flex-end'}}>
+            <Grid container sx={{display:'flex',alignItems:'center',justifyContent:'space-evenly'}}>
+                <Grid item sx={{display:'flex',alignContent:'center',justifyContent:'flex-end'}}>
                     <LinkedInIcon color='primary' sx={{fontSize:40}}/>
                     <TextField sx={{borderRadius:'5px'}}  size='small' placeholder='Search' variant='outlined' InputProps={{
                             startAdornment: (
@@ -31,24 +57,27 @@ export default function Header () {
                     }}
                 />
                 </Grid>
-                <Grid xs={.75}></Grid>
-                <Grid item xs={4.25}>
-                    <Tabs sx={{height:'5px'}} value={tabValue} onChange={(e,value)=>setTabValue(value)}>
+                <Grid item>
+                    <Tabs  value={tabValue} onChange={handleTabChange}>
 
-                    <Tab icon={<HouseRoundedIcon sx={{ fontSize:'25px'}} />} label="Home" sx={{'& .MuiTab-iconWrapper': { marginBottom : '0px'},textTransform:'none',fontSize:'12px',height:'40px',minHeight:'15px',minWidth:'10px'}}/>
+                    <Tab sx={{textTransform:'none'}} icon={<HouseRoundedIcon/>} label="Home"/>
 
-                    <Tab icon={<GroupIcon sx={{fontSize:'25px'}}/>} label='My Network' sx={{'& .MuiTab-iconWrapper': {marginBottom :0},textTransform:'none',fontSize:'12px',height:'40px',minHeight:'15px',minWidth:'10px'}}/>
+                    <Tab sx={{textTransform:'none'}} icon={<GroupIcon/>} label='My Network'/>
 
-                    <Tab icon={<WorkIcon sx={{fontSize:'25px'}}/>} label='Jobs' sx={{'& .MuiTab-iconWrapper': { marginBottom : 0},textTransform:'none',fontSize:'12px',height:'40px',minHeight:'15px',minWidth:'10px'}}/>
+                    <Tab sx={{textTransform:'none'}} icon={<WorkIcon />} label='Jobs'/>
 
-                    <Tab icon={<MessageIcon sx={{fontSize:'25px'}}/>} label='Messaging' sx={{'& .MuiTab-iconWrapper': { marginBottom : 0},textTransform:'none',fontSize:'12px',height:'40px',minHeight:'15px',minWidth:'10px'}}/>
+                    <Tab sx={{textTransform:'none'}} icon={<MessageIcon/>} label='Messaging' />
 
-                    <Tab icon={<NotificationsIcon sx={{fontSize:'25px'}}/>} label='Notifications' sx={{'& .MuiTab-iconWrapper': { marginBottom : 0},textTransform:'none',fontSize:'12px',height:'40px',minHeight:'15px',minWidth:'10px'}}/>
+                    <Tab sx={{textTransform:'none'}} icon={<NotificationsIcon />} label='Notifications'/>
 
-                    <Tab icon={<AccountCircleIcon sx={{fontSize:'25px'}}/>} label='Me' sx={{'& .MuiTab-iconWrapper': { marginBottom : 0},textTransform:'none',fontSize:'12px',height:'40px',minHeight:'15px',minWidth:'10px'}}/>
+                    <Tab sx={{textTransform:'none'}} icon={<AccountCircleIcon />} label='Me'/>
+
+                    <div style={{margin:'10px',borderLeft:'1px solid rgb(0,0,0,0.1)',height:'50px'}}></div>
+
+                    <Tab sx={{textTransform:'none'}} icon={<AppsIcon />} label='For Bussiness'/>
+
                     </Tabs>
                 </Grid>
-                <Grid item xs={3}></Grid>
             </Grid>
         </Toolbar>
     </AppBar>
