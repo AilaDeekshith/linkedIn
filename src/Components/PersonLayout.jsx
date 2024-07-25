@@ -1,11 +1,9 @@
 import React from 'react'
-import Header from './Header'
 import { Outlet } from 'react-router-dom'
 
-export const RootLayout = () => {
+export const PersonLayout = () => {
   return (
     <div>
-        <Header/>
         <Outlet/>
     </div>
   )

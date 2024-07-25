@@ -13,13 +13,12 @@ import { AddSkill } from './AddSkill';
 import { AddLanguage } from './AddLanguage';
 import { AddExperience } from './AddExperience';
 import { AddEducation } from './AddEducation';
-import Header from './Header';
 
 const bull = (
   <Box component="span" sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}>•</Box>
 );
 
-const Person = () => {
+const Profile = () => {
 
   const {user} = useLoaderData()
 
@@ -295,11 +294,12 @@ const Person = () => {
   )
 }
 
-export default Person;
+export default Profile;
 
-export async function personDataLoader(){
-  const [user] = await Promise.all([
-    fetch('http://localhost:8080/getUser/'+localStorage.getItem('profile')).then(response => response.json()),
-  ]);
-   return {user} 
-}
+// export async function DataLoader(){
+
+//   const response = await fetch('http://localhost:8080/getUser/'+localStorage.getItem('userEmailId'));
+//   const data = await response.json();
+//   return data;
+
+// }

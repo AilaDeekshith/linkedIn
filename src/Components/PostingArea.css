@@ -1,0 +1,38 @@
+textarea{
+    border: none;
+    margin-top: 20px;
+}
+
+textarea:focus{
+    border-color: none;
+}
+
+
+.result-modal {
+    border: none;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 20px;
+    z-index: 0;
+    display:'flex';
+    flex:1;
+    flex-grow:1;
+    flex-direction:'column';
+    flex-wrap: 'wrap';
+    height: 'auto';
+}
+
+.result-modal[open] {
+    animation: slide-in-from-top 0.35s ease-out;
+    z-index: 1;
+    display:'flex';
+    flex:1;
+    flex-grow:1;
+    flex-direction:'column';
+    flex-wrap: 'wrap';
+    height: 'auto';
+}
+  
+.result-modal::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
