@@ -81,9 +81,6 @@ function App() {
     getAllPosts()
     getAllJobPosts()
    getCurrentUser()
-    console.log(localStorage.getItem("userEmailId"))
-    // localStorage.removeItem("profile")
-    console.log(localStorage.getItem("profile"))
   },[])
 
   const contextValue = {

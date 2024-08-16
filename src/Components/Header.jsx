@@ -24,8 +24,6 @@ export default function Header() {
 
     function handleTabIndicator() {
 
-        console.log("in tab indicator")
-
         switch (window.location.pathname) {
             case "/home/":
                 setTabValue(0)
@@ -59,8 +57,6 @@ export default function Header() {
     const navigate = useNavigate()
 
     function handleTabChange(event, value) {
-
-        console.log("in tab change")
 
         setTabValue(value);
 

@@ -26,7 +26,6 @@ export const AddPost = forwardRef(function AddPost({},ref) {
         reposts:''
     });
 
-
     function handleDetails(event){
 
         if(event.target.name === 'icon' || event.target.name === 'image'){
@@ -53,7 +52,6 @@ export const AddPost = forwardRef(function AddPost({},ref) {
         }
     }
 
-
     function handleSubmit(event){
         event.preventDefault();
 
@@ -79,7 +77,6 @@ export const AddPost = forwardRef(function AddPost({},ref) {
     function handleClose(){
         ref.current.close();
     }
-
 
   return (
     <dialog className='result-modal' ref={ref} style={{width:'40%'}}>
